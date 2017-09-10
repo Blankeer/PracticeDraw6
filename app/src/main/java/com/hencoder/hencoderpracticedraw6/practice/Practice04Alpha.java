@@ -10,6 +10,8 @@ import android.widget.RelativeLayout;
 
 import com.hencoder.hencoderpracticedraw6.R;
 
+import java.util.Random;
+
 public class Practice04Alpha extends RelativeLayout {
     Button animateBt;
     ImageView imageView;
@@ -37,6 +39,12 @@ public class Practice04Alpha extends RelativeLayout {
             @Override
             public void onClick(final View v) {
                 // TODO 在这里处理点击事件，通过 View.animate().alpha() 来改变 View 的透明度
+                int random = new Random().nextInt(2);
+                if (random == 0) {
+                    imageView.animate().alpha(1);
+                } else if (random == 1) {
+                    imageView.animate().alpha(0.3F);
+                }
             }
         });
     }

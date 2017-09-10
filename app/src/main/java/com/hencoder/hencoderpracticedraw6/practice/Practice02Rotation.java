@@ -10,6 +10,8 @@ import android.widget.RelativeLayout;
 
 import com.hencoder.hencoderpracticedraw6.R;
 
+import java.util.Random;
+
 public class Practice02Rotation extends RelativeLayout {
     Button animateBt;
     ImageView imageView;
@@ -37,6 +39,12 @@ public class Practice02Rotation extends RelativeLayout {
             @Override
             public void onClick(final View v) {
                 // // TODO 在这里处理点击事件，通过 View.animate().rotation/X/Y() 来让 View 旋转
+                int random = new Random().nextInt(2);
+                if (random == 0) {
+                    imageView.animate().rotationXBy(50);
+                } else if (random == 1) {
+                    imageView.animate().rotationYBy(50);
+                }
             }
         });
     }
